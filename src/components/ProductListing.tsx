@@ -35,7 +35,7 @@ export const ProductListing = ({ selectedCategory }: ProductListingProps) => {
       {/* Page Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">
-          {selectedCategory || 'All Products'}
+          {selectedCategory || 'สินค้าทั้งหมด'}
         </h1>
         <p className="text-muted-foreground">
           {selectedCategory 
