@@ -37,7 +37,7 @@ export const Header = ({ onCategoryChange, onCartToggle, currentCategory }: Head
               <span className="text-primary-foreground font-bold text-lg">PT</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">PowerTools Pro</h1>
+              <h1 className="text-xl font-bold text-foreground">ProTech</h1>
               <p className="text-sm text-muted-foreground hidden sm:block">Professional Power Tools</p>
             </div>
           </div>
