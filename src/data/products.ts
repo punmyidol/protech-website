@@ -50,7 +50,7 @@ export const products: Product[] = [
   {
     id: "1",
     name: "Professional Cutting Blade",
-    price: 45.99,
+    price: 0,
     image: cuttingBladeImg,
     category: "Cutting & Refining",
     subcategory: "Cutting Work",
@@ -59,7 +59,7 @@ export const products: Product[] = [
   {
     id: "2",
     name: "Precision Refining Blade",
-    price: 38.50,
+    price: 0,
     image: cuttingBladeImg,
     category: "Cutting & Refining",
     subcategory: "Refining Work",
@@ -68,7 +68,7 @@ export const products: Product[] = [
   {
     id: "3",
     name: "Heavy-Duty Sanding Blade",
-    price: 32.99,
+    price: 0,
     image: cuttingBladeImg,
     category: "Cutting & Refining",
     subcategory: "Sanding Work",
@@ -77,7 +77,7 @@ export const products: Product[] = [
   {
     id: "4",
     name: "Diamond Cutting Blade",
-    price: 89.99,
+    price: 0,
     image: diamondBladeImg,
     category: "Cutting & Refining",
     subcategory: "Cutting Work",
@@ -86,7 +86,7 @@ export const products: Product[] = [
   {
     id: "5",
     name: "Wire Brush Set",
-    price: 24.99,
+    price: 0,
     image: wireBrushImg,
     category: "Cutting & Refining",
     subcategory: "Sanding Work",
@@ -97,7 +97,7 @@ export const products: Product[] = [
   {
     id: "6",
     name: "Professional Welding Torch",
-    price: 156.00,
+    price: 0,
     image: weldingTorchImg,
     category: "Welding Work",
     description: "High-performance welding torch for professional use"
@@ -105,7 +105,7 @@ export const products: Product[] = [
   {
     id: "7",
     name: "Welding Rod Pack",
-    price: 28.75,
+    price: 0,
     image: weldingRodsImg,
     category: "Welding Work",
     description: "Quality welding rods for various applications"
@@ -115,7 +115,7 @@ export const products: Product[] = [
   {
     id: "8",
     name: "Industrial Safety Helmet",
-    price: 67.50,
+    price: 0,
     image: safetyHelmetImg,
     category: "Safety Equipment",
     description: "ANSI-approved safety helmet with adjustable fit"
@@ -125,7 +125,7 @@ export const products: Product[] = [
   {
     id: "9",
     name: "Heavy-Duty Metal Cutter",
-    price: 189.99,
+    price: 0,
     image: metalCutterImg,
     category: "Electrical Appliances",
     description: "Powerful electric metal cutting tool"
@@ -135,7 +135,7 @@ export const products: Product[] = [
   {
     id: "10",
     name: "Clear Tape Roll",
-    price: 8.99,
+    price: 0,
     image: clearTapeImg,
     category: "Tools & Supplies",
     description: "High-strength clear adhesive tape"
@@ -143,7 +143,7 @@ export const products: Product[] = [
   {
     id: "11",
     name: "Stretch Film Roll",
-    price: 15.50,
+    price: 0,
     image: clearTapeImg,
     category: "Tools & Supplies",
     description: "Industrial strength stretch wrap film"
@@ -151,7 +151,7 @@ export const products: Product[] = [
   {
     id: "12",
     name: "Rubber Glue",
-    price: 12.25,
+    price: 0,
     image: clearTapeImg,
     category: "Tools & Supplies",
     description: "Multi-purpose rubber adhesive"

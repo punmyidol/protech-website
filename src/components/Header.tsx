@@ -45,7 +45,7 @@ export const Header = ({
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="font-medium">
-                  Products <ChevronDown className="ml-1 h-4 w-4" />
+                  สินค้า <ChevronDown className="ml-1 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-48">
@@ -86,7 +86,7 @@ export const Header = ({
               </Button>
               
               <div className="space-y-1">
-                <p className="px-3 py-2 text-sm font-medium text-muted-foreground">Products</p>
+                <p className="px-3 py-2 text-sm font-medium text-muted-foreground">สินค้า</p>
                 {categories.map(category => <Button key={category.name} variant={currentCategory === category.name ? "default" : "ghost"} onClick={() => handleCategoryClick(category.name)} className="justify-start ml-4" size="sm">
                     {category.name}
                   </Button>)}
