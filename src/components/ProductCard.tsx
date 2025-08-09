@@ -23,7 +23,11 @@ export const ProductCard = ({
   return <Card className="group hover:shadow-lg transition-shadow duration-300 animate-fade-in">
       <CardContent className="p-0">
         <div className="aspect-square overflow-hidden rounded-t-lg bg-secondary">
-          
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
         </div>
         <div className="p-4">
           <div className="flex items-start justify-between mb-2">
