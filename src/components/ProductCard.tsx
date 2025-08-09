@@ -14,7 +14,9 @@ export const ProductCard = ({
     addToCart
   } = useCart();
   const handleAddToCart = () => {
+    console.log('Adding product to cart:', product);
     addToCart(product);
+    console.log('Product added successfully');
     toast({
       title: "Added to cart",
       description: `${product.name} has been added to your cart.`
