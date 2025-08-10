@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { CartItem, Product } from '@/data/products';
+import { toast } from '@/hooks/use-toast';
 
 const CART_STORAGE_KEY = 'power-tools-cart';
 
@@ -70,6 +71,25 @@ export const useCart = () => {
     return cartItems.reduce((count, item) => count + item.quantity, 0);
   };
 
+  const checkout = () => {
+    if (cartItems.length === 0) {
+      toast({
+        title: "ตะกร้าสินค้าว่างเปล่า",
+        description: "กรุณาเลือกสินค้าก่อนดำเนินการชำระเงิน",
+        variant: "destructive"
+      });
+      return false;
+    }
+
+    toast({
+      title: "ชำระเงินสำเร็จ",
+      description: "ขอบคุณสำหรับการสั่งซื้อ! เราจะดำเนินการจัดส่งให้คุณ"
+    });
+    
+    clearCart();
+    return true;
+  };
+
   return {
     cartItems,
     addToCart,
@@ -77,6 +97,7 @@ export const useCart = () => {
     updateQuantity,
     clearCart,
     getCartTotal,
-    getCartItemsCount
+    getCartItemsCount,
+    checkout
   };
 };

@@ -11,13 +11,16 @@ interface CartSidebarProps {
 }
 
 export const CartSidebar = ({ isOpen, onClose, onCheckout }: CartSidebarProps) => {
-  const { cartItems, updateQuantity, removeFromCart, getCartTotal } = useCart();
+  const { cartItems, updateQuantity, removeFromCart, getCartTotal, checkout } = useCart();
 
   if (!isOpen) return null;
 
   const handleCheckout = () => {
-    onCheckout();
-    onClose();
+    const success = checkout();
+    if (success) {
+      onCheckout();
+      onClose();
+    }
   };
 
   return (

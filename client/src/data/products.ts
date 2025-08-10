@@ -1,22 +1,28 @@
 // Import generated product images
 // ใบเจียรเหล็ก 4" (100x2mm) AWC60P สีแดง SUMO
-import polishingBladeImg11 from '@/assets/polishBlade11.jpg';
-import polishingBladeImg12 from '@/assets/polishBlade12.jpg';
-import polishingBladeImg13 from '@/assets/polishBlade13.jpg';
-import polishingBladeImg14 from '@/assets/polishBlade14.jpg';
-import polishingBladeImg15 from '@/assets/polishBlade15.jpg';
-import polishingBladeImg16 from '@/assets/polishBlade16.jpg';
-import polishingBladeImg17 from '@/assets/polishBlade17.jpg';
-import polishingBladeImg18 from '@/assets/polishBlade18.jpg';
-import polishingBladeImg19 from '@/assets/polishBlade19.jpg';
-import polishingBladeImg110 from '@/assets/polishBlade110.jpg';
-import polishingBladeImg111 from '@/assets/polishBlade111.jpg';
-import polishingBladeImg112 from '@/assets/polishBlade112.jpg';
-import polishingBladeImg113 from '@/assets/polishBlade113.jpg';
-import polishingBladeImg114 from '@/assets/polishBlade114.jpg';
+import polishingBlade11back from '@/assets/polishBlade11.jpg';
+import polishingBlade12front from '@/assets/polishBlade12.jpg';
+import polishingBlade13box from '@/assets/polishBlade13.jpg';
+import polishingBlade14parcel from '@/assets/polishBlade14.jpg';
 
 // ใบเจียร 4” (100x2.0mm) Ceragrain60P SUMO สีเขียว
-import polishingBladeImg21 from '@/assets/cutting-blade.jpg';
+import polishingBlade21front from '@/assets/polishBlade21.jpg';
+import polishingBlade22back from '@/assets/polishBlade22.jpg';
+import polishingBlade23box from '@/assets/polishBlade23.jpg';
+import polishingBlade24parcel from '@/assets/polishBlade24.jpg';
+
+// ใบเจียร 4” (100x4mm) หนา SUMO สีแดง
+import polishingBlade31front from '@/assets/polishBlade31.jpg';
+import polishingBlade32back from '@/assets/polishBlade32.jpg';
+import polishingBlade33box from '@/assets/polishBlade33.jpg';
+import polishingBlade34parcel from '@/assets/polishBlade34.jpg';
+
+// ใบเจียร 4” (100x4mm) หนา SUMO สีเขียว
+import polishingBlade41front from '@/assets/polishBlade41.jpg';
+import polishingBlade42back from '@/assets/polishBlade42.jpg';
+import polishingBlade43box from '@/assets/polishBlade43.jpg';
+import polishingBlade44parcel from '@/assets/polishBlade44.jpg';
+
 import weldingTorchImg from '@/assets/welding-torch.jpg';
 import safetyHelmetImg from '@/assets/safety-helmet.jpg';
 import metalCutterImg from '@/assets/metal-cutter.jpg';
@@ -69,21 +75,12 @@ export const products: Product[] = [
     id: "1",
     name: 'ใบเจียรเหล็ก 4" (100x2mm) AWC60P สีแดง SUMO',
     price: 15,
-    image: polishingBladeImg11,
+    image: polishingBlade12front,
     images: [
-      polishingBladeImg11,
-      polishingBladeImg12,
-      polishingBladeImg13,
-      polishingBladeImg14,
-      polishingBladeImg15,
-      polishingBladeImg16,
-      polishingBladeImg17,
-      polishingBladeImg18,
-      polishingBladeImg19,
-      polishingBladeImg110,
-      polishingBladeImg111,
-      polishingBladeImg112,
-      polishingBladeImg113
+      polishingBlade12front,
+      polishingBlade11back,
+      polishingBlade13box,
+      polishingBlade14parcel,
     ],
     category: "งานตัดและเจียร",
     subcategory: "งานเจียร",
@@ -93,30 +90,48 @@ export const products: Product[] = [
     id: "2",
     name: "ใบเจียร 4” (100x2.0mm) Ceragrain60P SUMO สีเขียว",
     price: 16,
-    image: polishingBladeImg21,
+    image: polishingBlade21front,
+    images: [
+      polishingBlade21front,
+      polishingBlade22back,
+      polishingBlade23box,
+      polishingBlade24parcel
+    ],
     category: "งานตัดและเจียร",
-    subcategory: "งานขัด",
+    subcategory: "งานเจียร",
     description: "ใบขัดแม่นยำสำหรับงานขัดละเอียด"
   },
-  /* {
+  {
     id: "3",
-    name: "ใบขัดผิวหนักหน่วง",
-    price: 1100,
-    image: cuttingBladeImg,
-    category: "งานตัดและขัด",
-    subcategory: "งานขัดผิว",
+    name: "ใบเจียร 4” (100x4mm) หนา SUMO สีแดง",
+    price: 14,
+    image: polishingBlade31front,
+    images: [
+      polishingBlade31front,
+      polishingBlade32back,
+      polishingBlade33box,
+      polishingBlade34parcel
+    ],
+    category: "งานตัดและเจียร",
+    subcategory: "งานเจียร",
     description: "ใบขัดผิวทนทานสำหรับงานหนัก"
   },
   {
     id: "4",
-    name: "ใบตัดเพชร",
-    price: 2800,
-    image: diamondBladeImg,
-    category: "งานตัดและขัด",
-    subcategory: "งานตัด",
+    name: "ใบเจียร 4” (100x4mm) หนา SUMO สีเขียว",
+    price: 14,
+    image: polishingBlade41front,
+    images: [
+      polishingBlade41front,
+      polishingBlade42back,
+      polishingBlade43box,
+      polishingBlade44parcel
+    ],
+    category: "งานตัดและเจียร",
+    subcategory: "งานเจียร",
     description: "ใบตัดเพชรพรีเมียมคุณภาพสูง"
   },
-  {
+  /* {
     id: "5",
     name: "ชุดแปรงลวดเหล็ก",
     price: 450,
