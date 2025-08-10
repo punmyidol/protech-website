@@ -11,7 +11,11 @@ export const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold">PT</span>
+                <img
+                  src="/protech_logo.jpg"
+                  alt="ProTech Hardware"
+                  className="w-12 h-12 object-contain rounded-lg"
+                />
               </div>
               <h3 className="text-xl font-bold">ProTech Hardware</h3>
             </div>

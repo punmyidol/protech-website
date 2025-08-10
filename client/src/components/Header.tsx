@@ -32,7 +32,7 @@ export const Header = ({
             <img
               src="/protech_logo.jpg"
               alt="ProTech Hardware"
-              className="w-12 h-12 object-contain rounded-lg"
+              className="w-20 h-20 object-contain rounded-lg"
             />
             <div>
               <h1 className="text-xl font-bold text-foreground">ProTech</h1>
