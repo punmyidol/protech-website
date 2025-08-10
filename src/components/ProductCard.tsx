@@ -14,12 +14,10 @@ export const ProductCard = ({
     addToCart
   } = useCart();
   const handleAddToCart = () => {
-    console.log('Adding product to cart:', product);
     addToCart(product);
-    console.log('Product added successfully');
     toast({
-      title: "Added to cart",
-      description: `${product.name} has been added to your cart.`
+      title: "เพิ่มสินค้าแล้ว",
+      description: `เพิ่ม ${product.name} ลงในตะกร้าแล้ว`
     });
   };
   return <Card className="group hover:shadow-lg transition-shadow duration-300 animate-fade-in">
@@ -45,14 +43,14 @@ export const ProductCard = ({
             </p>}
           <div className="flex items-center justify-between">
             <span className="text-2xl font-bold text-primary">
-              ${product.price.toFixed(2)}
+              ฿{product.price.toLocaleString()}
             </span>
           </div>
         </div>
       </CardContent>
       <CardFooter className="p-4 pt-0">
         <Button onClick={handleAddToCart} className="w-full font-medium" size="sm">
-          Add to Cart
+          เพิ่มลงตะกร้า
         </Button>
       </CardFooter>
     </Card>;

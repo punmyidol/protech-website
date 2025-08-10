@@ -13,11 +13,11 @@ export const Footer = () => {
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold">PT</span>
               </div>
-              <h3 className="text-xl font-bold">PowerTools Pro</h3>
+              <h3 className="text-xl font-bold">ProTech Hardware</h3>
             </div>
             <p className="text-muted-foreground">
-              Your trusted partner for professional power tools and equipment. 
-              Quality tools for quality work.
+              พันธมิตรที่เชื่อถือได้สำหรับเครื่องมือและอุปกรณ์มืออาชีพ
+              เครื่องมือคุณภาพสำหรับงานคุณภาพ
             </p>
             <div className="flex space-x-2">
               <Button variant="outline" size="sm">
@@ -37,22 +37,22 @@ export const Footer = () => {
 
           {/* Contact Information */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Contact Information</h4>
+            <h4 className="text-lg font-semibold">ข้อมูลติดต่อ</h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-primary" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <span className="text-sm">+66 (0) 2 123-4567</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-primary" />
-                <span className="text-sm">info@powertoolspro.com</span>
+                <span className="text-sm">info@protechhardware.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-primary mt-0.5" />
                 <span className="text-sm">
-                  123 Industrial Avenue<br />
-                  Tool City, TC 12345<br />
-                  United States
+                  123 ถนนอุตสาหกรรม<br />
+                  เขตลาดพร้าว กรุงเทพฯ 10230<br />
+                  ประเทศไทย
                 </span>
               </div>
             </div>
@@ -60,25 +60,25 @@ export const Footer = () => {
 
           {/* Business Hours */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Business Hours</h4>
+            <h4 className="text-lg font-semibold">เวลาทำการ</h4>
             <div className="space-y-2">
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Monday - Friday:</span>
-                <span>8:00 AM - 6:00 PM</span>
+                <span className="text-muted-foreground">จันทร์ - ศุกร์:</span>
+                <span>08:00 - 18:00 น.</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Saturday:</span>
-                <span>9:00 AM - 4:00 PM</span>
+                <span className="text-muted-foreground">เสาร์:</span>
+                <span>09:00 - 16:00 น.</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Sunday:</span>
-                <span>Closed</span>
+                <span className="text-muted-foreground">อาทิตย์:</span>
+                <span>ปิด</span>
               </div>
             </div>
             <div className="pt-2">
               <p className="text-xs text-muted-foreground">
-                Emergency repairs available 24/7<br />
-                Call us for urgent tool needs
+                บริการซ่อมฉุกเฉิน 24/7<br />
+                โทรสำหรับความต้องการเครื่องมือเร่งด่วน
               </p>
             </div>
           </div>
@@ -87,16 +87,16 @@ export const Footer = () => {
         <Separator className="my-8" />
 
         <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>&copy; 2024 PowerTools Pro. All rights reserved.</p>
+          <p>&copy; 2024 ProTech Hardware สงวนลิขสิทธิ์</p>
           <div className="flex space-x-4 mt-4 sm:mt-0">
             <Button variant="link" size="sm" className="text-muted-foreground p-0">
-              Privacy Policy
+              นโยบายความเป็นส่วนตัว
             </Button>
             <Button variant="link" size="sm" className="text-muted-foreground p-0">
-              Terms of Service
+              เงื่อนไขการใช้บริการ
             </Button>
             <Button variant="link" size="sm" className="text-muted-foreground p-0">
-              Return Policy
+              นโยบายการคืนสินค้า
             </Button>
           </div>
         </div>

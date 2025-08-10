@@ -26,7 +26,7 @@ export const ProductListing = ({
       {/* Page Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">
-          {selectedCategory || 'All Products'}
+          {selectedCategory || 'สินค้าทั้งหมด'}
         </h1>
         
       </div>
@@ -35,7 +35,7 @@ export const ProductListing = ({
       {subcategories.length > 0 && <div className="mb-6">
           <div className="flex flex-wrap gap-2">
             <Button variant={selectedSubcategory === null ? "default" : "outline"} onClick={() => handleSubcategoryFilter(null)} size="sm">
-              All {selectedCategory}
+              ทั้งหมด {selectedCategory}
             </Button>
             {subcategories.map(subcategory => <Button key={subcategory} variant={selectedSubcategory === subcategory ? "default" : "outline"} onClick={() => handleSubcategoryFilter(subcategory)} size="sm">
                 {subcategory}
@@ -46,7 +46,7 @@ export const ProductListing = ({
       {/* Products Count */}
       <div className="mb-6">
         <Badge variant="secondary" className="text-sm">
-          {filteredProducts.length} product{filteredProducts.length !== 1 ? 's' : ''}
+          {filteredProducts.length} รายการ
         </Badge>
       </div>
 
@@ -55,12 +55,12 @@ export const ProductListing = ({
           {filteredProducts.map(product => <ProductCard key={product.id} product={product} />)}
         </div> : <div className="text-center py-12">
           <p className="text-muted-foreground text-lg mb-4">
-            No products found in this category.
+            ไม่พบสินค้าในหมวดหมู่นี้
           </p>
           <Button variant="outline" onClick={() => {
         setSelectedSubcategory(null);
       }}>
-            Clear Filters
+            ล้างตัวกรอง
           </Button>
         </div>}
     </div>;

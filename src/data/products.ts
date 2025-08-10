@@ -24,137 +24,137 @@ export interface CartItem extends Product {
 
 export const categories = [
   {
-    name: "Cutting & Refining",
-    subcategories: ["Cutting Work", "Refining Work", "Sanding Work"]
+    name: "งานตัดและขัด",
+    subcategories: ["งานตัด", "งานขัด", "งานขัดผิว"]
   },
   {
-    name: "Welding Work",
+    name: "งานเชื่อม",
     subcategories: []
   },
   {
-    name: "Safety Equipment",
+    name: "อุปกรณ์ความปลอดภัย",
     subcategories: []
   },
   {
-    name: "Electrical Appliances",
+    name: "เครื่องใช้ไฟฟ้า",
     subcategories: []
   },
   {
-    name: "Tools & Supplies",
+    name: "เครื่องมือและอุปกรณ์",
     subcategories: []
   }
 ];
 
 export const products: Product[] = [
-  // Cutting & Refining
+  // งานตัดและขัด
   {
     id: "1",
-    name: "Professional Cutting Blade",
-    price: 0,
+    name: "ใบตัดมืออาชีพ",
+    price: 1250,
     image: cuttingBladeImg,
-    category: "Cutting & Refining",
-    subcategory: "Cutting Work",
-    description: "High-quality steel cutting blade for professional use"
+    category: "งานตัดและขัด",
+    subcategory: "งานตัด",
+    description: "ใบตัดเหล็กคุณภาพสูงสำหรับงานมืออาชีพ"
   },
   {
     id: "2",
-    name: "Precision Refining Blade",
-    price: 0,
+    name: "ใบขัดความแม่นยำ",
+    price: 950,
     image: cuttingBladeImg,
-    category: "Cutting & Refining",
-    subcategory: "Refining Work",
-    description: "Precision blade for detailed refining work"
+    category: "งานตัดและขัด",
+    subcategory: "งานขัด",
+    description: "ใบขัดแม่นยำสำหรับงานขัดละเอียด"
   },
   {
     id: "3",
-    name: "Heavy-Duty Sanding Blade",
-    price: 0,
+    name: "ใบขัดผิวหนักหน่วง",
+    price: 1100,
     image: cuttingBladeImg,
-    category: "Cutting & Refining",
-    subcategory: "Sanding Work",
-    description: "Durable sanding blade for heavy-duty applications"
+    category: "งานตัดและขัด",
+    subcategory: "งานขัดผิว",
+    description: "ใบขัดผิวทนทานสำหรับงานหนัก"
   },
   {
     id: "4",
-    name: "Diamond Cutting Blade",
-    price: 0,
+    name: "ใบตัดเพชร",
+    price: 2800,
     image: diamondBladeImg,
-    category: "Cutting & Refining",
-    subcategory: "Cutting Work",
-    description: "Premium diamond-tipped cutting blade"
+    category: "งานตัดและขัด",
+    subcategory: "งานตัด",
+    description: "ใบตัดเพชรพรีเมียมคุณภาพสูง"
   },
   {
     id: "5",
-    name: "Wire Brush Set",
-    price: 0,
+    name: "ชุดแปรงลวดเหล็ก",
+    price: 450,
     image: wireBrushImg,
-    category: "Cutting & Refining",
-    subcategory: "Sanding Work",
-    description: "Complete wire brush set for surface preparation"
+    category: "งานตัดและขัด",
+    subcategory: "งานขัดผิว",
+    description: "ชุดแปรงลวดเหล็กสำหรับเตรียมผิวงาน"
   },
 
-  // Welding Work
+  // งานเชื่อม
   {
     id: "6",
-    name: "Professional Welding Torch",
-    price: 0,
+    name: "ปืนเชื่อมมืออาชีพ",
+    price: 8500,
     image: weldingTorchImg,
-    category: "Welding Work",
-    description: "High-performance welding torch for professional use"
+    category: "งานเชื่อม",
+    description: "ปืนเชื่อมประสิทธิภาพสูงสำหรับงานมืออาชีพ"
   },
   {
     id: "7",
-    name: "Welding Rod Pack",
-    price: 0,
+    name: "ลวดเชื่อมแพ็ค",
+    price: 680,
     image: weldingRodsImg,
-    category: "Welding Work",
-    description: "Quality welding rods for various applications"
+    category: "งานเชื่อม",
+    description: "ลวดเชื่อมคุณภาพสำหรับงานหลากหลาย"
   },
 
-  // Safety Equipment
+  // อุปกรณ์ความปลอดภัย
   {
     id: "8",
-    name: "Industrial Safety Helmet",
-    price: 0,
+    name: "หมวกนิรภัยอุตสาหกรรม",
+    price: 850,
     image: safetyHelmetImg,
-    category: "Safety Equipment",
-    description: "ANSI-approved safety helmet with adjustable fit"
+    category: "อุปกรณ์ความปลอดภัย",
+    description: "หมวกนิรภัยมาตรฐาน ANSI ปรับได้"
   },
 
-  // Electrical Appliances
+  // เครื่องใช้ไฟฟ้า
   {
     id: "9",
-    name: "Heavy-Duty Metal Cutter",
-    price: 0,
+    name: "เครื่องตัดโลหะหนักหน่วง",
+    price: 12500,
     image: metalCutterImg,
-    category: "Electrical Appliances",
-    description: "Powerful electric metal cutting tool"
+    category: "เครื่องใช้ไฟฟ้า",
+    description: "เครื่องมือตัดโลหะไฟฟ้าประสิทธิภาพสูง"
   },
 
-  // Tools & Supplies
+  // เครื่องมือและอุปกรณ์
   {
     id: "10",
-    name: "Clear Tape Roll",
-    price: 0,
+    name: "เทปใสม้วน",
+    price: 120,
     image: clearTapeImg,
-    category: "Tools & Supplies",
-    description: "High-strength clear adhesive tape"
+    category: "เครื่องมือและอุปกรณ์",
+    description: "เทปกาวใสความแข็งแรงสูง"
   },
   {
     id: "11",
-    name: "Stretch Film Roll",
-    price: 0,
+    name: "ฟิล์มยืดม้วน",
+    price: 180,
     image: clearTapeImg,
-    category: "Tools & Supplies",
-    description: "Industrial strength stretch wrap film"
+    category: "เครื่องมือและอุปกรณ์",
+    description: "ฟิล์มหุ้มความแข็งแรงระดับอุตสาหกรรม"
   },
   {
     id: "12",
-    name: "Rubber Glue",
-    price: 0,
+    name: "กาวยาง",
+    price: 95,
     image: clearTapeImg,
-    category: "Tools & Supplies",
-    description: "Multi-purpose rubber adhesive"
+    category: "เครื่องมือและอุปกรณ์",
+    description: "กาวยางอเนกประสงค์"
   }
 ];
 

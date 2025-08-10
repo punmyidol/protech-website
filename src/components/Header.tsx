@@ -55,8 +55,7 @@ export const Header = ({
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button variant="ghost" className="font-medium">เกี่ยวกับ
-          </Button>
+            <Button variant="ghost" className="font-medium">เกี่ยวกับ</Button>
             <Button variant="ghost" className="font-medium">ติดต่อเรา</Button>
           </nav>
 
@@ -82,7 +81,7 @@ export const Header = ({
         {mobileMenuOpen && <nav className="lg:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in">
             <div className="flex flex-col space-y-2">
               <Button variant={currentCategory === null ? "default" : "ghost"} onClick={() => handleCategoryClick(null)} className="justify-start">
-                Home
+                หน้าหลัก
               </Button>
               
               <div className="space-y-1">
@@ -92,8 +91,8 @@ export const Header = ({
                   </Button>)}
               </div>
               
-              <Button variant="ghost" className="justify-start">About</Button>
-              <Button variant="ghost" className="justify-start">Contact</Button>
+              <Button variant="ghost" className="justify-start">เกี่ยวกับ</Button>
+              <Button variant="ghost" className="justify-start">ติดต่อเรา</Button>
             </div>
           </nav>}
       </div>

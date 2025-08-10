@@ -33,7 +33,7 @@ export const CartSidebar = ({ isOpen, onClose, onCheckout }: CartSidebarProps) =
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-border">
-            <h2 className="text-xl font-semibold">Shopping Cart</h2>
+            <h2 className="text-xl font-semibold">ตะกร้าสินค้า</h2>
             <Button variant="ghost" size="sm" onClick={onClose}>
               <X className="h-5 w-5" />
             </Button>
@@ -43,9 +43,9 @@ export const CartSidebar = ({ isOpen, onClose, onCheckout }: CartSidebarProps) =
           <div className="flex-1 overflow-y-auto p-6">
             {cartItems.length === 0 ? (
               <div className="text-center py-12">
-                <p className="text-muted-foreground">Your cart is empty</p>
+                <p className="text-muted-foreground">ตะกร้าของคุณว่างเปล่า</p>
                 <Button variant="outline" onClick={onClose} className="mt-4">
-                  Continue Shopping
+                  เลือกซื้อสินค้าต่อ
                 </Button>
               </div>
             ) : (
@@ -60,7 +60,7 @@ export const CartSidebar = ({ isOpen, onClose, onCheckout }: CartSidebarProps) =
                     <div className="flex-1 min-w-0">
                       <h3 className="font-medium text-sm leading-tight">{item.name}</h3>
                       <p className="text-primary font-semibold mt-1">
-                        ${item.price.toFixed(2)}
+                        ฿{item.price.toLocaleString()}
                       </p>
                       
                       {/* Quantity Controls */}
@@ -108,13 +108,13 @@ export const CartSidebar = ({ isOpen, onClose, onCheckout }: CartSidebarProps) =
             <div className="p-6 border-t border-border bg-card">
               <Separator className="mb-4" />
               <div className="flex justify-between items-center mb-4">
-                <span className="text-lg font-semibold">Total:</span>
+                <span className="text-lg font-semibold">รวม:</span>
                 <span className="text-xl font-bold text-primary">
-                  ${getCartTotal().toFixed(2)}
+                  ฿{getCartTotal().toLocaleString()}
                 </span>
               </div>
               <Button onClick={handleCheckout} className="w-full" size="lg">
-                Proceed to Checkout
+                ดำเนินการชำระเงิน
               </Button>
             </div>
           )}

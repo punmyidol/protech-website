@@ -24,26 +24,18 @@ export const useCart = () => {
   }, [cartItems]);
 
   const addToCart = (product: Product, quantity: number = 1) => {
-    console.log('useCart: Adding product:', product, 'quantity:', quantity);
     setCartItems(currentItems => {
-      console.log('useCart: Current cart items:', currentItems);
       const existingItem = currentItems.find(item => item.id === product.id);
       
       if (existingItem) {
-        console.log('useCart: Updating existing item');
-        const updated = currentItems.map(item =>
+        return currentItems.map(item =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + quantity }
             : item
         );
-        console.log('useCart: Updated cart items:', updated);
-        return updated;
       }
       
-      console.log('useCart: Adding new item');
-      const newItems = [...currentItems, { ...product, quantity }];
-      console.log('useCart: New cart items:', newItems);
-      return newItems;
+      return [...currentItems, { ...product, quantity }];
     });
   };
 

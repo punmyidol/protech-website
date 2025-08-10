@@ -37,8 +37,8 @@ export const CheckoutForm = ({ onBack }: CheckoutFormProps) => {
   const validateForm = () => {
     if (!customerData.name.trim()) {
       toast({
-        title: "Validation Error",
-        description: "Please enter your name.",
+        title: "ข้อมูลไม่ถูกต้อง",
+        description: "กรุณากรอกชื่อ-นามสกุล",
         variant: "destructive"
       });
       return false;
@@ -46,8 +46,8 @@ export const CheckoutForm = ({ onBack }: CheckoutFormProps) => {
     
     if (!customerData.phone.trim()) {
       toast({
-        title: "Validation Error", 
-        description: "Please enter your phone number.",
+        title: "ข้อมูลไม่ถูกต้อง", 
+        description: "กรุณากรอกเบอร์โทรศัพท์",
         variant: "destructive"
       });
       return false;
@@ -55,8 +55,8 @@ export const CheckoutForm = ({ onBack }: CheckoutFormProps) => {
     
     if (!customerData.address.trim()) {
       toast({
-        title: "Validation Error",
-        description: "Please enter your delivery address.",
+        title: "ข้อมูลไม่ถูกต้อง",
+        description: "กรุณากรอกที่อยู่จัดส่ง",
         variant: "destructive"
       });
       return false;
@@ -100,16 +100,16 @@ export const CheckoutForm = ({ onBack }: CheckoutFormProps) => {
       await sendOrderNotification(orderData);
 
       toast({
-        title: "Order Placed Successfully!",
-        description: "Thank you! Your order has been placed. We'll contact you soon.",
+        title: "สั่งซื้อสำเร็จ!",
+        description: "ขอบคุณครับ! คำสั่งซื้อของคุณได้รับแล้ว เราจะติดต่อกลับเร็วๆ นี้",
       });
 
       clearCart();
       onBack();
     } catch (error) {
       toast({
-        title: "Order Failed",
-        description: "There was an error placing your order. Please try again.",
+        title: "สั่งซื้อไม่สำเร็จ",
+        description: "เกิดข้อผิดพลาดในการสั่งซื้อ กรุณาลองใหม่อีกครั้ง",
         variant: "destructive"
       });
     } finally {
@@ -122,9 +122,9 @@ export const CheckoutForm = ({ onBack }: CheckoutFormProps) => {
       <div className="flex items-center space-x-4 mb-6">
         <Button variant="outline" onClick={onBack} size="sm">
           <ArrowLeft className="h-4 w-4 mr-2" />
-          Back to Cart
+          กลับไปตะกร้า
         </Button>
-        <h1 className="text-2xl font-bold">Checkout</h1>
+        <h1 className="text-2xl font-bold">ชำระเงิน</h1>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
@@ -132,53 +132,53 @@ export const CheckoutForm = ({ onBack }: CheckoutFormProps) => {
         <div className="lg:col-span-2">
           <Card>
             <CardHeader>
-              <CardTitle>Customer Information</CardTitle>
+              <CardTitle>ข้อมูลลูกค้า</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <Label htmlFor="name">Full Name *</Label>
+                  <Label htmlFor="name">ชื่อ-นามสกุล *</Label>
                   <Input
                     id="name"
                     type="text"
                     value={customerData.name}
                     onChange={(e) => handleInputChange('name', e.target.value)}
-                    placeholder="Enter your full name"
+                    placeholder="กรอกชื่อ-นามสกุล"
                     required
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="phone">Phone Number *</Label>
+                  <Label htmlFor="phone">เบอร์โทรศัพท์ *</Label>
                   <Input
                     id="phone"
                     type="tel"
                     value={customerData.phone}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
-                    placeholder="Enter your phone number"
+                    placeholder="กรอกเบอร์โทรศัพท์"
                     required
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="address">Delivery Address *</Label>
+                  <Label htmlFor="address">ที่อยู่จัดส่ง *</Label>
                   <Textarea
                     id="address"
                     value={customerData.address}
                     onChange={(e) => handleInputChange('address', e.target.value)}
-                    placeholder="Enter your full delivery address"
+                    placeholder="กรอกที่อยู่จัดส่งแบบเต็ม"
                     className="min-h-[100px]"
                     required
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="notes">Additional Notes (Optional)</Label>
+                  <Label htmlFor="notes">หมายเหตุเพิ่มเติม (ไม่บังคับ)</Label>
                   <Textarea
                     id="notes"
                     value={customerData.notes}
                     onChange={(e) => handleInputChange('notes', e.target.value)}
-                    placeholder="Any special delivery instructions or notes"
+                    placeholder="คำแนะนำการจัดส่งพิเศษหรือหมายเหตุ"
                     className="min-h-[80px]"
                   />
                 </div>
@@ -189,7 +189,7 @@ export const CheckoutForm = ({ onBack }: CheckoutFormProps) => {
                   size="lg"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Placing Order...' : 'Place Order'}
+                  {isSubmitting ? 'กำลังสั่งซื้อ...' : 'สั่งซื้อสินค้า'}
                 </Button>
               </form>
             </CardContent>
@@ -200,17 +200,17 @@ export const CheckoutForm = ({ onBack }: CheckoutFormProps) => {
         <div className="lg:col-span-1">
           <Card>
             <CardHeader>
-              <CardTitle>Order Summary</CardTitle>
+              <CardTitle>สรุปการสั่งซื้อ</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {cartItems.map((item) => (
                 <div key={item.id} className="flex justify-between items-start text-sm">
                   <div className="flex-1">
                     <p className="font-medium">{item.name}</p>
-                    <p className="text-muted-foreground">Qty: {item.quantity}</p>
+                    <p className="text-muted-foreground">จำนวน: {item.quantity}</p>
                   </div>
                   <p className="font-semibold">
-                    ${(item.price * item.quantity).toFixed(2)}
+                    ฿{(item.price * item.quantity).toLocaleString()}
                   </p>
                 </div>
               ))}
@@ -218,8 +218,8 @@ export const CheckoutForm = ({ onBack }: CheckoutFormProps) => {
               <Separator />
               
               <div className="flex justify-between items-center font-bold text-lg">
-                <span>Total:</span>
-                <span className="text-primary">${getCartTotal().toFixed(2)}</span>
+                <span>รวม:</span>
+                <span className="text-primary">฿{getCartTotal().toLocaleString()}</span>
               </div>
             </CardContent>
           </Card>
