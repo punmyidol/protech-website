@@ -1,5 +1,22 @@
 // Import generated product images
-import cuttingBladeImg from '@/assets/cutting-blade.jpg';
+// ใบเจียรเหล็ก 4" (100x2mm) AWC60P สีแดง SUMO
+import polishingBladeImg11 from '@/assets/polishBlade11.jpg';
+import polishingBladeImg12 from '@/assets/polishBlade12.jpg';
+import polishingBladeImg13 from '@/assets/polishBlade13.jpg';
+import polishingBladeImg14 from '@/assets/polishBlade14.jpg';
+import polishingBladeImg15 from '@/assets/polishBlade15.jpg';
+import polishingBladeImg16 from '@/assets/polishBlade16.jpg';
+import polishingBladeImg17 from '@/assets/polishBlade17.jpg';
+import polishingBladeImg18 from '@/assets/polishBlade18.jpg';
+import polishingBladeImg19 from '@/assets/polishBlade19.jpg';
+import polishingBladeImg110 from '@/assets/polishBlade110.jpg';
+import polishingBladeImg111 from '@/assets/polishBlade111.jpg';
+import polishingBladeImg112 from '@/assets/polishBlade112.jpg';
+import polishingBladeImg113 from '@/assets/polishBlade113.jpg';
+import polishingBladeImg114 from '@/assets/polishBlade114.jpg';
+
+// ใบเจียร 4” (100x2.0mm) Ceragrain60P SUMO สีเขียว
+import polishingBladeImg21 from '@/assets/cutting-blade.jpg';
 import weldingTorchImg from '@/assets/welding-torch.jpg';
 import safetyHelmetImg from '@/assets/safety-helmet.jpg';
 import metalCutterImg from '@/assets/metal-cutter.jpg';
@@ -13,6 +30,7 @@ export interface Product {
   name: string;
   price: number;
   image: string;
+  images?: string[]; // Additional images for slideshow
   category: string;
   subcategory?: string;
   description?: string;
@@ -24,8 +42,8 @@ export interface CartItem extends Product {
 
 export const categories = [
   {
-    name: "งานตัดและขัด",
-    subcategories: ["งานตัด", "งานขัด", "งานขัดผิว"]
+    name: "งานตัดและเจียร",
+    subcategories: ["งานตัด", "งานเจียร"]
   },
   {
     name: "งานเชื่อม",
@@ -49,23 +67,38 @@ export const products: Product[] = [
   // งานตัดและขัด
   {
     id: "1",
-    name: "ใบตัดมืออาชีพ",
-    price: 1250,
-    image: cuttingBladeImg,
-    category: "งานตัดและขัด",
-    subcategory: "งานตัด",
+    name: 'ใบเจียรเหล็ก 4" (100x2mm) AWC60P สีแดง SUMO',
+    price: 15,
+    image: polishingBladeImg11,
+    images: [
+      polishingBladeImg11,
+      polishingBladeImg12,
+      polishingBladeImg13,
+      polishingBladeImg14,
+      polishingBladeImg15,
+      polishingBladeImg16,
+      polishingBladeImg17,
+      polishingBladeImg18,
+      polishingBladeImg19,
+      polishingBladeImg110,
+      polishingBladeImg111,
+      polishingBladeImg112,
+      polishingBladeImg113
+    ],
+    category: "งานตัดและเจียร",
+    subcategory: "งานเจียร",
     description: "ใบตัดเหล็กคุณภาพสูงสำหรับงานมืออาชีพ"
   },
   {
     id: "2",
-    name: "ใบขัดความแม่นยำ",
-    price: 950,
-    image: cuttingBladeImg,
-    category: "งานตัดและขัด",
+    name: "ใบเจียร 4” (100x2.0mm) Ceragrain60P SUMO สีเขียว",
+    price: 16,
+    image: polishingBladeImg21,
+    category: "งานตัดและเจียร",
     subcategory: "งานขัด",
     description: "ใบขัดแม่นยำสำหรับงานขัดละเอียด"
   },
-  {
+  /* {
     id: "3",
     name: "ใบขัดผิวหนักหน่วง",
     price: 1100,
@@ -155,8 +188,8 @@ export const products: Product[] = [
     image: clearTapeImg,
     category: "เครื่องมือและอุปกรณ์",
     description: "กาวยางอเนกประสงค์"
-  }
-];
+  } */
+]; 
 
 export const getProductsByCategory = (category: string) => {
   return products.filter(product => product.category === category);
@@ -164,4 +197,4 @@ export const getProductsByCategory = (category: string) => {
 
 export const getProductById = (id: string) => {
   return products.find(product => product.id === id);
-};
+}; 

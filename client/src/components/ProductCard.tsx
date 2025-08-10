@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Product } from '@/data/products';
 import { useCart } from '@/hooks/useCart';
 import { toast } from '@/hooks/use-toast';
+import { useNavigate } from 'react-router-dom';
 interface ProductCardProps {
   product: Product;
 }
@@ -13,14 +14,24 @@ export const ProductCard = ({
   const {
     addToCart
   } = useCart();
-  const handleAddToCart = () => {
+  const navigate = useNavigate();
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent card navigation when clicking Add to Cart
     addToCart(product);
     toast({
       title: "เพิ่มสินค้าแล้ว",
       description: `เพิ่ม ${product.name} ลงในตะกร้าแล้ว`
     });
   };
-  return <Card className="group hover:shadow-lg transition-shadow duration-300 animate-fade-in">
+
+  const handleCardClick = () => {
+    navigate(`/products/${product.id}`);
+  };
+  return <Card 
+    className="group hover:shadow-lg transition-shadow duration-300 animate-fade-in cursor-pointer" 
+    onClick={handleCardClick}
+  >
       <CardContent className="p-0">
         <div className="aspect-square overflow-hidden rounded-t-lg bg-secondary">
           <img
