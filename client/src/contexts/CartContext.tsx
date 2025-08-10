@@ -98,12 +98,8 @@ export const CartProvider = ({ children }: CartProviderProps) => {
       return false;
     }
 
-    toast({
-      title: "ชำระเงินสำเร็จ",
-      description: "ขอบคุณสำหรับการสั่งซื้อ! เราจะดำเนินการจัดส่งให้คุณ"
-    });
-    
-    clearCart();
+    // Only validate cart has items, don't show success toast or clear cart here
+    // This will be handled in the actual checkout process
     return true;
   };
 

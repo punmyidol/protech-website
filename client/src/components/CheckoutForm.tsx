@@ -30,11 +30,43 @@ export const CheckoutForm = ({ onBack }: CheckoutFormProps) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Redirect back if cart is empty
+  if (cartItems.length === 0) {
+    return (
+      <div className="max-w-2xl mx-auto p-6 space-y-6 animate-fade-in">
+        <div className="flex items-center space-x-4 mb-6">
+          <Button variant="outline" onClick={onBack} size="sm">
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            กลับไปตะกร้า
+          </Button>
+          <h1 className="text-2xl font-bold">ชำระเงิน</h1>
+        </div>
+        
+        <Card className="text-center py-12">
+          <CardContent>
+            <p className="text-muted-foreground mb-4">ตะกร้าสินค้าของคุณว่างเปล่า</p>
+            <Button onClick={onBack}>กลับไปเลือกสินค้า</Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
   const handleInputChange = (field: keyof CustomerData, value: string) => {
     setCustomerData(prev => ({ ...prev, [field]: value }));
   };
 
   const validateForm = () => {
+    // Check if cart is empty
+    if (cartItems.length === 0) {
+      toast({
+        title: "ตะกร้าสินค้าว่างเปล่า",
+        description: "กรุณาเลือกสินค้าก่อนดำเนินการชำระเงิน",
+        variant: "destructive"
+      });
+      return false;
+    }
+
     if (!customerData.name.trim()) {
       toast({
         title: "ข้อมูลไม่ถูกต้อง",
@@ -187,9 +219,9 @@ export const CheckoutForm = ({ onBack }: CheckoutFormProps) => {
                   type="submit" 
                   className="w-full" 
                   size="lg"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || cartItems.length === 0}
                 >
-                  {isSubmitting ? 'กำลังสั่งซื้อ...' : 'สั่งซื้อสินค้า'}
+                  {isSubmitting ? 'กำลังสั่งซื้อ...' : `สั่งซื้อสินค้า (฿${getCartTotal().toLocaleString()})`}
                 </Button>
               </form>
             </CardContent>
@@ -203,24 +235,41 @@ export const CheckoutForm = ({ onBack }: CheckoutFormProps) => {
               <CardTitle>สรุปการสั่งซื้อ</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              {cartItems.map((item) => (
-                <div key={item.id} className="flex justify-between items-start text-sm">
-                  <div className="flex-1">
-                    <p className="font-medium">{item.name}</p>
-                    <p className="text-muted-foreground">จำนวน: {item.quantity}</p>
-                  </div>
-                  <p className="font-semibold">
-                    ฿{(item.price * item.quantity).toLocaleString()}
-                  </p>
+              {cartItems.length === 0 ? (
+                <div className="text-center py-8 text-muted-foreground">
+                  <p>ไม่มีสินค้าในตะกร้า</p>
                 </div>
-              ))}
-              
-              <Separator />
-              
-              <div className="flex justify-between items-center font-bold text-lg">
-                <span>รวม:</span>
-                <span className="text-primary">฿{getCartTotal().toLocaleString()}</span>
-              </div>
+              ) : (
+                <>
+                  {cartItems.map((item) => (
+                    <div key={item.id} className="flex items-start space-x-3 py-3">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-12 h-12 object-cover rounded-md bg-secondary flex-shrink-0"
+                      />
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-medium text-sm leading-tight mb-1">{item.name}</h4>
+                        <div className="flex justify-between items-center text-sm">
+                          <div className="text-muted-foreground">
+                            <span>฿{item.price.toLocaleString()} × {item.quantity}</span>
+                          </div>
+                          <p className="font-semibold text-primary">
+                            ฿{(item.price * item.quantity).toLocaleString()}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  
+                  <Separator />
+                  
+                  <div className="flex justify-between items-center font-bold text-lg">
+                    <span>รวมทั้งหมด:</span>
+                    <span className="text-primary">฿{getCartTotal().toLocaleString()}</span>
+                  </div>
+                </>
+              )}
             </CardContent>
           </Card>
         </div>

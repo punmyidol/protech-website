@@ -16,10 +16,11 @@ export const CartSidebar = ({ isOpen, onClose, onCheckout }: CartSidebarProps) =
   if (!isOpen) return null;
 
   const handleCheckout = () => {
-    const success = checkout();
-    if (success) {
-      onCheckout();
-      onClose();
+    // Only validate cart has items, don't show success or clear cart
+    const canProceed = checkout();
+    if (canProceed) {
+      onCheckout(); // Navigate to checkout page
+      onClose(); // Close the sidebar
     }
   };
 
