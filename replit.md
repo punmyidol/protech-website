@@ -12,8 +12,8 @@ Preferred communication style: Simple, everyday language.
 - **Framework**: React 18 with TypeScript and Vite for build tooling
 - **UI Framework**: shadcn/ui components built on Radix UI primitives
 - **Styling**: Tailwind CSS with a custom design system using CSS variables
-- **State Management**: TanStack React Query for server state, local state for cart management with localStorage persistence
-- **Routing**: Wouter for lightweight client-side routing
+- **State Management**: TanStack React Query for server state, React Context for cart management with localStorage persistence
+- **Routing**: React Router for client-side routing with dynamic product routes
 - **Form Handling**: React Hook Form with Zod validation
 
 ## Backend Architecture
@@ -37,8 +37,9 @@ Preferred communication style: Simple, everyday language.
 
 ## Key Features
 - **Product Catalog**: Categorized product browsing with subcategory filtering
-- **Shopping Cart**: Persistent cart with localStorage, quantity management
-- **Checkout System**: Customer information collection with form validation
+- **Product Details**: Dynamic routes with image slideshow functionality
+- **Shopping Cart**: Persistent cart with React Context, localStorage, quantity management, and checkout functionality
+- **Checkout System**: Success toast notifications and cart clearing
 - **Responsive Design**: Mobile-first approach with adaptive layouts
 - **Thai Localization**: User interface and content in Thai language
 

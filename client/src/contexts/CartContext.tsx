@@ -1,10 +1,27 @@
-import { useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { CartItem, Product } from '@/data/products';
 import { toast } from '@/hooks/use-toast';
 
 const CART_STORAGE_KEY = 'power-tools-cart';
 
-export const useCart = () => {
+interface CartContextType {
+  cartItems: CartItem[];
+  addToCart: (product: Product, quantity?: number) => void;
+  removeFromCart: (productId: string) => void;
+  updateQuantity: (productId: string, quantity: number) => void;
+  clearCart: () => void;
+  getCartTotal: () => number;
+  getCartItemsCount: () => number;
+  checkout: () => boolean;
+}
+
+const CartContext = createContext<CartContextType | undefined>(undefined);
+
+interface CartProviderProps {
+  children: ReactNode;
+}
+
+export const CartProvider = ({ children }: CartProviderProps) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   // Load cart from localStorage on mount
@@ -90,7 +107,7 @@ export const useCart = () => {
     return true;
   };
 
-  return {
+  const value: CartContextType = {
     cartItems,
     addToCart,
     removeFromCart,
@@ -100,4 +117,18 @@ export const useCart = () => {
     getCartItemsCount,
     checkout
   };
+
+  return (
+    <CartContext.Provider value={value}>
+      {children}
+    </CartContext.Provider>
+  );
+};
+
+export const useCart = () => {
+  const context = useContext(CartContext);
+  if (context === undefined) {
+    throw new Error('useCart must be used within a CartProvider');
+  }
+  return context;
 };
