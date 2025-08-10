@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { categories } from '@/data/products';
-import { useCart } from '@/contexts/CartContext';
+import { useCart } from '@/hooks/useCart';
 interface HeaderProps {
   onCategoryChange: (category: string | null) => void;
   onCartToggle: () => void;

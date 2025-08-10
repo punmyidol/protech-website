@@ -2,7 +2,7 @@ import { X, Plus, Minus, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { useCart } from '@/contexts/CartContext';
+import { useCart } from '@/hooks/useCart';
 
 interface CartSidebarProps {
   isOpen: boolean;

@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ChevronLeft, ChevronRight, ArrowLeft } from 'lucide-react';
 import { Product, products } from '@/data/products';
-import { useCart } from '@/contexts/CartContext';
+import { useCart } from '@/hooks/useCart';
 import { toast } from '@/hooks/use-toast';
 
 const ProductDetails = () => {
