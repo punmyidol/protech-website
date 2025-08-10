@@ -23,6 +23,12 @@ import polishingBlade42back from '@/assets/polishBlade42.jpg';
 import polishingBlade43box from '@/assets/polishBlade43.jpg';
 import polishingBlade44parcel from '@/assets/polishBlade44.jpg';
 
+// ใบเจียร 4” (100x6mm) หนา SUMO สีแดง
+import polishingBlade51front from '@/assets/polishBlade51.jpg';
+import polishingBlade52back from '@/assets/polishBlade52.jpg';
+import polishingBlade53box from '@/assets/polishBlade53.jpg';
+import polishingBlade54parcel from '@/assets/polishBlade54.jpg';
+
 import weldingTorchImg from '@/assets/welding-torch.jpg';
 import safetyHelmetImg from '@/assets/safety-helmet.jpg';
 import metalCutterImg from '@/assets/metal-cutter.jpg';
@@ -131,18 +137,24 @@ export const products: Product[] = [
     subcategory: "งานเจียร",
     description: "ใบตัดเพชรพรีเมียมคุณภาพสูง"
   },
-  /* {
+  {
     id: "5",
-    name: "ชุดแปรงลวดเหล็ก",
-    price: 450,
-    image: wireBrushImg,
-    category: "งานตัดและขัด",
-    subcategory: "งานขัดผิว",
+    name: "ใบเจียร 4” (100x6mm) หนา SUMO สีแดง",
+    price: 16,
+    image: polishingBlade51front,
+    images: [
+      polishingBlade51front,
+      polishingBlade52back,
+      polishingBlade53box,
+      polishingBlade54parcel
+    ],
+    category: "งานตัดและเจียร",
+    subcategory: "งานเจียร",
     description: "ชุดแปรงลวดเหล็กสำหรับเตรียมผิวงาน"
   },
 
   // งานเชื่อม
-  {
+  /* {
     id: "6",
     name: "ปืนเชื่อมมืออาชีพ",
     price: 8500,
